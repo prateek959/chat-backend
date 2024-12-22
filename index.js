@@ -16,11 +16,12 @@ const PORT = process.env.PORT || 5000;
 app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 app.use(cookieParser());
-const corsOption={
-    origin:'http://localhost:3000',
-    credentials:true
+const corsOption = {
+    origin: ['http://localhost:3000', 'https://chat-backend-95du.onrender.com'], // Allow both local and production domains
+    credentials: true // To send cookies or authentication headers
 };
-app.use(cors(corsOption)); 
+app.use(cors(corsOption));
+
 
 
 // routes
